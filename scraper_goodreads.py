@@ -31,7 +31,6 @@ driver.find_element_by_xpath('/html/body/div[2]/div/header/div[2]/div/nav/ul/li[
 # Name of the book
 # Author
 # Average of rating 
-# Link for the book
 
 html = driver.page_source
 # print(html)
@@ -61,7 +60,7 @@ for tr in table_rows[1:]:
     book_list.append(book_dict)
 
 
-
+# create dataframe and convert into a .csv file
 books_df = pd.DataFrame(book_list)
 
 books_df.to_csv('books_goodreads.csv',index=None)
